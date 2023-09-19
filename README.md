@@ -1,13 +1,23 @@
 <h1 align="center"> DWES </h1>
 
+<h3>Insignias</h3><br>
+
+<h3>Índice</h3><br>
+
 <h3>Descripción del proyecto</h3>
 Clase de Desarrollo Web entorno servidor del ciclo superior de Desarrollo de Aplicaciones Web donde aprenderemos a utilizar Git en esta tanda de ejercicios<br>
 
 <h3>Estado del proyecto</h3>
 :construction: Proyecto en construcción :construction:<br>
 
+<h3>Características de la aplicación y demostración</h3><br>
+
+<h3>Acceso al proyecto</h3><br>
+
 <h3>Tecnologías utilizadas</h3>
 php, phyton<br>
+
+<h3>Personas Contribuyentes</h3><br>
 
 <h3>Personas-Desarrolladores del Proyecto</h3>
 Gabriel Alonso Varela<br>
