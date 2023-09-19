@@ -1,13 +1,16 @@
 <h1 align="center"> DWES </h1>
 
-<h2>Descripción del proyecto</h2>
-Proyecto de edición de README para la clase de DWES, en la que crearemos un README de manera correcta para un proyecto.<br>
+<h3>Descripción del proyecto</h3>
+Clase de Desarrollo Web entorno servidor del ciclo superior de Desarrollo de Aplicaciones Web donde aprenderemos a utilizar Git en esta tanda de ejercicios<br>
 
-<h2>Estado del proyecto</h2>
-:construction: Proyecto en construcción :construction:<br><br>
+<h3>Estado del proyecto</h3>
+:construction: Proyecto en construcción :construction:<br>
 
-<h2>Personas-Desarrolladores del Proyecto</h2>
-Gabriel Alonso Varela<br><br>
+<h3>Tecnologías utilizadas</h3>
+php, phyton<br>
 
-<h2>Licencia</h2>
+<h3>Personas-Desarrolladores del Proyecto</h3>
+Gabriel Alonso Varela<br>
+
+<h3>Licencia</h3>
 DWES tiene licencia del MIT. La documentación de DWES (p. ej., archivos .md en la carpeta ./docs) tiene licencia Creative Commons.
