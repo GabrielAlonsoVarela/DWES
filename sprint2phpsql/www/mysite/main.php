@@ -17,7 +17,7 @@ $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die ('Fail');
 $query = 'SELECT * FROM tJuegos';
 $result = mysqli_query($db, $query) or die('Query error');
 while ($row = mysqli_fetch_array($result)){
-echo '<h1><a href=/detail.php?id='.$row[0].'>'.$row[0].'.'.$row[1].'</a></h1>';
+echo '<h1><a href="/detail.php?id='.$row[0].'">'.$row[0].'.'.$row[1].'</a></h1>';
 echo '<img src='.$row[2].'></img>';
 echo '<ul>';
 echo '<li>Precio: '.$row[3].'</li>';
