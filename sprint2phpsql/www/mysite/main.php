@@ -25,6 +25,8 @@ echo '<li>Plataforma: '.$row[4].'</li>';
 echo '</ul>';
 echo '<hr/>';
 }
+
+mysqli_close($db);
 ?>
 </body>
 </html>
