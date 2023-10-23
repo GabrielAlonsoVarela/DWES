@@ -28,7 +28,7 @@ echo '<img src='.$only_row[2].'></img>';
 $query2 = 'select * from tComentarios where juego_id ='.$id_juego;
 $result2 = mysqli_query($db,$query2) or die('query error');
 while ($row = mysqli_fetch_array($result2)){
-echo '<li>'.$row[1].'</li>';
+echo '<li>'.$row[1].'<br>Fecha:'.$row[4].'</li>';
 }
 mysqli_close($db);
 ?>
