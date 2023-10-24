@@ -16,6 +16,7 @@ $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die ('Fail');
 //lanzar una query
 $query = 'SELECT * FROM tJuegos';
 $result = mysqli_query($db, $query) or die('Query error');
+// Pintamos los datos con un while para que nos muestre todas las filas
 while ($row = mysqli_fetch_array($result)){
 echo '<h1><a href="/detail.php?id='.$row[0].'">'.$row[0].'.'.$row[1].'</a></h1>';
 echo '<img src='.$row[2].'></img>';
