@@ -12,21 +12,27 @@ $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
 </head>
 <body>
 <?php
+//Comprueba la id especificada
 if (!isset($_GET['id'])){
  die('No se ha especificado un juego');
 }
+//Guardamos la id en una variable
 $id_juego= $_GET['id'];
+//Seleccionamos la info de nuestra base de datos
 $query = 'select * from tJuegos where id ='.$id_juego;
 $result = mysqli_query($db,$query) or die('query error');
 $only_row = mysqli_fetch_array($result);
+//La mostramos en pantalla
 echo '<h1>'.$only_row[1].'</h1>';
 echo '<img src='.$only_row[2].'></img>';
 ?>
 <h3>Comentarios:</h3>
 <ul>
 <?php
+//Guardamos la info de los comentarios
 $query2 = 'select * from tComentarios where juego_id ='.$id_juego;
 $result2 = mysqli_query($db,$query2) or die('query error');
+//usamos while para que si hay mas de un comentario lo muestre
 while ($row = mysqli_fetch_array($result2)){
 echo '<li>'.$row[1].'<br>Fecha:'.$row[4].'</li>';
 }
@@ -34,6 +40,7 @@ mysqli_close($db);
 ?>
 </ul>
 <p>Deja un nuevo comentario:</p>
+//Formulario nuevo para introducir un comentario
 <form action="/comment.php" method="post">
 <textarea rows="4" cols="50" name="new_comment"></textarea><br>
 <input type="hidden" name="juego_id" value="<?php echo $id_juego; ?>">
