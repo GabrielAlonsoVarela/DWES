@@ -5,6 +5,10 @@ print('c. El reloj')
 opcion = input('Selecciona la opcion correcta (a/b/c): ')
 puntuacion=0
 
+while(opcion!='a') & (opcion!='b') & (opcion!='c'):
+    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
+
+
 if opcion == 'a':
     print('Opcion Incorrecta')
     puntuacion=puntuacion-5
@@ -20,6 +24,9 @@ print('a. Las estrellas')
 print('b. El agujero')
 print('c. El viento')
 opcion = input('Selecciona la opcion correcta (a/b/c): ')
+
+while(opcion!='a') & (opcion!='b') & (opcion!='c'):
+    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
 
 if opcion == 'a':
     print('Opcion Incorrecta')
@@ -37,6 +44,9 @@ print('b. El tiempo')
 print('c. La lengua')
 opcion = input('Selecciona la opcion correcta (a/b/c): ')
 
+while(opcion!='a') & (opcion!='b') & (opcion!='c'):
+    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
+
 if opcion == 'a':
     print('Opcion Incorrecta')
     puntuacion=puntuacion-5
@@ -49,6 +59,6 @@ else:
 
 if puntuacion<0:
     puntuacion=0
-    
+
 puntuacion=str(puntuacion)
 print('Tu puntuacion final es de: ' + puntuacion + '/30')
