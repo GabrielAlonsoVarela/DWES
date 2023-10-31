@@ -1,64 +1,66 @@
-print('¿Qué cosa es, que la hacen cantando, la compran llorando y la usan sin saber?')
-print('a. La escopeta')
-print('b. El ataud')
-print('c. El reloj')
-opcion = input('Selecciona la opcion correcta (a/b/c): ')
-puntuacion=0
+import random
 
-while(opcion!='a') & (opcion!='b') & (opcion!='c'):
-    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
+def adivinanza_1():
+    print('¿Qué cosa es, que la hacen cantando, la compran llorando y la usan sin saber?')
+    print('a. La escopeta')
+    print('b. El ataud')
+    print('c. El reloj')
+    opcion = input('Selecciona la opcion correcta (a/b/c): ')
+    
+    while opcion not in ['a', 'b', 'c']:
+        opcion = input(opcion + ' no es una opcion válida (a/b/c): ')
+    
+    if opcion == 'a' or opcion == 'c':
+        print('Opcion Incorrecta')
+        return 0
+    else:
+        print('Opcion Correcta')
+        return 10
 
+def adivinanza_2():
+    print('¿Qué cosa silba sin labios, corre sin pies, te pega en la espalda y aún no lo ves?')
+    print('a. Las estrellas')
+    print('b. El agujero')
+    print('c. El viento')
+    opcion = input('Selecciona la opcion correcta (a/b/c): ')
+    
+    while opcion not in ['a', 'b', 'c']:
+        opcion = input(opcion + ' no es una opcion válida (a/b/c): ')
+    
+    if opcion == 'a' or opcion == 'b':
+        print('Opcion Incorrecta')
+        return 0
+    else:
+        print('Opcion Correcta')
+        return 10
 
-if opcion == 'a':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-elif opcion == 'c':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-else:
-    print('Opcion Correcta')
-    puntuacion=puntuacion+10
+def adivinanza_3():
+    print('¿Qué cosa es, que a su paso el hierro oxida, el acero se rompe y la carne se pudre?')
+    print('a. El humo')
+    print('b. El tiempo')
+    print('c. La lengua')
+    opcion = input('Selecciona la opcion correcta (a/b/c): ')
+    
+    while opcion not in ['a', 'b', 'c']:
+        opcion = input(opcion + ' no es una opcion válida (a/b/c): ')
+    
+    if opcion == 'a' or opcion == 'c':
+        print('Opcion Incorrecta')
+        return 0
+    else:
+        print('Opcion Correcta')
+        return 10
 
-print('¿Qué cosa silba sin labios, corre sin pies, te pega en la espalda y aún no lo ves?')
-print('a. Las estrellas')
-print('b. El agujero')
-print('c. El viento')
-opcion = input('Selecciona la opcion correcta (a/b/c): ')
+adivinanzas = [adivinanza_1, adivinanza_2, adivinanza_3]
+random.shuffle(adivinanzas)  # Mezclamos el orden de las adivinanzas
 
-while(opcion!='a') & (opcion!='b') & (opcion!='c'):
-    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
+puntuacion_total = 0
 
-if opcion == 'a':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-elif opcion == 'b':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-else:
-    print('Opcion Correcta')
-    puntuacion=puntuacion+10
+for adivinanza in adivinanzas[:2]:  # Elegimos dos adivinanzas aleatorias
+    puntuacion_total += adivinanza()
 
-print('¿Qué cosa es, que a su paso el hierro oxida, el acero se rompe y la carne se pudre?')
-print('a. El humo')
-print('b. El tiempo')
-print('c. La lengua')
-opcion = input('Selecciona la opcion correcta (a/b/c): ')
+if puntuacion_total < 0:
+    puntuacion_total = 0
 
-while(opcion!='a') & (opcion!='b') & (opcion!='c'):
-    opcion = input(opcion + ' no es una opcion válida(a/b/c): ')
-
-if opcion == 'a':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-elif opcion == 'c':
-    print('Opcion Incorrecta')
-    puntuacion=puntuacion-5
-else:
-    print('Opcion Correcta')
-    puntuacion=puntuacion+10
-
-if puntuacion<0:
-    puntuacion=0
-
-puntuacion=str(puntuacion)
-print('Tu puntuacion final es de: ' + puntuacion + '/30')
+puntuacion_total = str(puntuacion_total)
+print('Tu puntuación final es de: ' + puntuacion_total + '/20')
