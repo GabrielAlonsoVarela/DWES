@@ -1,5 +1,6 @@
 import random
 
+# Guardamos cada adivinanza en una función con su respuesta correspondiente
 def adivinanza_1():
     print('¿Qué cosa es, que la hacen cantando, la compran llorando y la usan sin saber?')
     print('a. La escopeta')
@@ -51,16 +52,21 @@ def adivinanza_3():
         print('Opcion Correcta')
         return 10
 
+#Añadimos las funciones a una lista
 adivinanzas = [adivinanza_1, adivinanza_2, adivinanza_3]
-random.shuffle(adivinanzas)  # Mezclamos el orden de las adivinanzas
+# Mezclamos el orden de las adivinanzas
+random.shuffle(adivinanzas)  
 
 puntuacion_total = 0
 
-for adivinanza in adivinanzas[:2]:  # Elegimos dos adivinanzas aleatorias
+# Elegimos dos adivinanzas aleatorias
+for adivinanza in adivinanzas[:2]: 
     puntuacion_total += adivinanza()
 
+#Controlo que la puntuacion no sea negativa
 if puntuacion_total < 0:
     puntuacion_total = 0
+
 
 puntuacion_total = str(puntuacion_total)
 print('Tu puntuación final es de: ' + puntuacion_total + '/20')
