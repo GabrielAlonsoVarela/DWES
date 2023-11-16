@@ -49,5 +49,10 @@ echo '<img src=' . $only_row['2'] . '></img>';
     <input type="hidden" name="juego_id" value="<?php echo $id_juego; ?>">
     <input type="submit" value="Comentar">
 </form>
+<?php
+if (isset($_SESSION['usuario_id'])) {
+    echo '<a href="/logout.php">Cerrar sesión</a>';
+}
+?>
 </body>
 </html>

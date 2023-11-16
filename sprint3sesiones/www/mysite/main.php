@@ -14,8 +14,13 @@ $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die ('Fail');
 ?>
 </head>
 <body>
-<h1>Conexión establecida</h1>
 <?php
+
+if (isset($_SESSION['usuario_id'])) {
+    echo '<a href="/logout.php">Cerrar sesión</a>';
+}
+
+
 //lanzar una query
 $query = 'SELECT * FROM tJuegos';
 $result = mysqli_query($db, $query) or die('Query error');
