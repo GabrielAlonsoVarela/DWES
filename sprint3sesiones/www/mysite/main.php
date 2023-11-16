@@ -1,5 +1,6 @@
 <?php
 session_start();
+$db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die ('Fail');
 ?>
 <html>
 <head>
@@ -24,7 +25,6 @@ session_start();
             transition: background-color 0.3s;
         }
 
-        /* Estilos específicos para la animación de fade-in */
         .fade-in {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -43,12 +43,23 @@ session_start();
     </script>
 </head>
 <body>
-    <?php
+<?php
     if (isset($_SESSION['usuario_id'])) {
-        echo '<a href="/logout.php">Cerrar sesión</a>';
-    }
+        $usuario_id = $_SESSION['usuario_id'];
 
-    $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die ('Fail');
+        // Obtener el nombre del usuario desde la base de datos
+        $query_usuario = "SELECT nombre FROM tUsuarios WHERE id = $usuario_id";
+        $result_usuario = mysqli_query($db, $query_usuario);
+        $row_usuario = mysqli_fetch_assoc($result_usuario);
+        $nombre_usuario = $row_usuario['nombre'];
+
+        // Mostrar el nombre del usuario
+        echo 'Hola, ' . $nombre_usuario . '! ';
+        echo '<br>';
+        echo '<a href="/logout.php">Cerrar sesión</a>';
+        echo ' &nbsp; ';
+        echo '<a href="/changepassword.html">Cambiar Contraseña</a>';
+    }
 
     $query = 'SELECT * FROM tJuegos';
     $result = mysqli_query($db, $query) or die('Query error');
